@@ -1,0 +1,14 @@
+Java
+
+
+Scanner sc = new Scanner(System.in);
+
+sc.nextInt();
+sc.nextLong();
+sc.nextLine();
+sc.next(); //String
+
+
+System.out.println("");
+
+

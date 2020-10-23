@@ -1,0 +1,10 @@
+Binario
+
+
+
+
+Java 8:
+
+Ej.:
+
+int indice = Collections.binarySearch(lista,objetoABuscar)
