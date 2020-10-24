@@ -1,0 +1,69 @@
+MergeSort
+
+
+Consiste en dividir en partes iguales la lista y luego mezclarlos comparandolos, dejandolos ordenados.
+
+
+Recursivo. Dividira la lista hasta tener un elemento en cada lista, luego lo compara con el que esta a su lado y segun corresponda, lo situa donde corresponde.
+
+
+
+//Primero se divide en partes iguales la lista/vector
+public void mergeSort(int[] matrix, int init, int n){
+	
+	int n1, n2;
+	
+	if(n>1){
+		
+		n1=n/2;
+		n2=n-n1;
+		mergeSort(matrix, init, n1);
+		mergeSort(matrix, init+n1, n2);
+		
+		merge(matrix,init,n1,n2);
+		
+	}
+	
+}
+
+
+//Mezcla los elementos segun corresponda
+private void merge(int[] matrix, int init, int n1, int n2){
+	
+	int[] buffer = new unt[n1+n2];
+	int temp, temp1, temp2, i;
+	
+	while(temp1<n1 && temp<n2){
+		
+		if(matrix[init+temp1]<matrix[init+n1+temp2]){
+			
+			buffer[temp++]=matrix[init+(temp1++)];
+			
+		}else{
+			
+			buffer[temp++]=matrix[init+n1+(temp2++)];
+			
+		}
+		
+		while(temp1<n1){
+			
+			buffer[temp++]=matrix[init+(temp1++)];
+		}
+		
+		while(temp2<n2){
+			
+			buffer[temp++]=matrix[init+n1+(temp2++)];
+		}
+		
+		for(i=0;i<n1+n2;i++){
+			
+			matrix[init+i]=buffer[i];
+			
+		}
+		
+	}
+	
+	
+	
+	
+}

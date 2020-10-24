@@ -1,23 +1,28 @@
 Burbuja
 
-O(n a la 2)
+Compara todos los elementos de una lista contra todos, si uno es mayor que el otro los intercambia.
 
 
-ArrayList vec = new ArrayList();
-vec.length() = 4;
 
-for(i=1; i<4;i++){
-	for(j=0; j<3;j++){
-		if(vec.get(j) > vec.get(j+1)){
-			aux = vec.get(j)
-			vec.get(j) = vec.get(j+1)
-			vec.get(j+1) = aux
-		}
+O(n^2) --> n es la cantidad de elementos de la lista. Se pasa 2 veces por las lista (n*n).
 
+
+Java 8:  Collections.sort(lista);
+
+
+
+bubbleSort(int matrix[]){
+	
+	int buffer;
+	int i,j;
+	
+	for(i=0;i<matrix.length;i++){
+		for(j=0;j<i;j++){
+			if(matrix[i]<matrix[j]){
+				buffer=matrix[j];
+				matrix[j]=matrix[i];
+				matrix[i]=buffer;
+			}
+		}	
 	}
 }
-
-
-Java 8:
-
-Collections.sort(lista);

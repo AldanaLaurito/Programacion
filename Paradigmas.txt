@@ -1,0 +1,9 @@
+Paradigmas
+
+
+POO
+
+- Herencia
+- Polimorfismo (mismo nombre, diferentes formas/comportamiento)
+- Abstracción
+- Encapsulamiento (private, protected, public)

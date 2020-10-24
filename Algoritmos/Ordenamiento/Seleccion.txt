@@ -1,0 +1,35 @@
+Seleccion
+
+
+Funciona seleccionando el menor elemento de la matriz y llevando al principio; a continuación selecciona el siguiente menor y lo pone en la segunda posicion de la matriz
+ y asi sucesivamete.
+
+Ordena comparando los 2 primeros, y los ordena, despues comapra el 3ro con lso dos primeros y los ubica (o deja) donde deberian estar.
+Despues el 4to es comparado con los primeros 3 y es reubicado (en caso de ser encesario) sigue asi sucesivamente hasta que todo el vector este ordenado.
+
+
+seleccion(int[] matrix){
+	
+	int i, j, k, o+p, buffer, limit=matrix.length-1;
+	
+	for(k=0; k<limit;k++){
+		
+		p=k;
+		
+		for(i=k+1;i<=limit;i++){
+			
+			if(matrix[i]<matrix[p]) p=i;
+			
+		}
+		
+		if(p!=k){
+			
+			buffer=matrix[P];
+			matrix[p]=matrix[k];
+			matrix[k]=buffer;
+			
+		}
+	}
+	
+	
+}

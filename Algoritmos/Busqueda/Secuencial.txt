@@ -1,0 +1,7 @@
+Secuencial
+
+Busca cada elemento del vector hasta que encuentra lo buscado.
+
+O(n)
+
+No tiene precondicion.

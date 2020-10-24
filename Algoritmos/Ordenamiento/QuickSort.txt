@@ -1,0 +1,130 @@
+Quicksort
+
+
+Es el más rápido gracias a sus llamadas recursivas.
+
+Divide recursivamente el vector en partes iguales, indicando un elmento de inicio, fin y un pivote (o comodín) que nos permita segmentar la lista.
+Una vez dividida, lo que hace, es dejar todos los mayores que el pivote a su derecha y todos los menores a su izquierda.
+
+
+Ej1.
+
+Vector --> {3,5,4,8}
+
+
+1) 
+Lado 1: 3
+
+Lado 2: {4,8}
+
+Pivote: 5
+
+2)
+
+¿3 es mayor o menor que el comodín?
+
+Es menor por lo que lo deja en el lado izq.
+
+3)
+
+Psamos al otro lado
+
+¿4 es mayor o menor que el comodín?
+
+Es menor, se lo pasa a la izq.
+
+4) 
+Pregunta por el 8, al ser mayor lo deja donde esta.
+
+
+Resultado: {3,4,5,8}
+
+
+
+
+Ej2.
+
+					{5,2,7,3,1,8,2,6,9}
+
+
+
+						Pivote: 5
+
+
+			{2,3,1,2}		5		{7,8,6,9}
+
+
+			Pivote: 2				Pivote:7
+			
+		{1} 2 {3,2}				{6} 7 {8,9}
+		
+				Pivote: 3				Pivote: 8
+				
+		1	2	{2}	3			6	7	8	{9}
+		
+		
+		1	2	2	3	6	7	8	9
+		
+		
+Resultado: {1,2,2,3,5,6,7,8,9}
+
+
+---------------------------------- Código ----------------
+
+
+private void quickSort(int[] lista; int limiteIzq,int limiteDer){
+
+	int izq= limiteIzq;
+	int der = limiteDer;
+	int pivote = lista[(izq+der)/2];
+	int temporal = null;
+
+	do{
+		while(lista[izq]<pivote && izq<limiteDer) izq++;
+		while(pivote<lista[der] && der>limiteIzq) der--;
+		
+		if(izq<=der){
+			
+			temporal = lista[izq];
+			lista[izq]=lista[der];
+			lista[der]=temporal;
+			izq++;
+			der--;
+		}	
+	}while(izq<=der);
+	
+	if(limiteIzq<der) quickSort(lista,limiteIzq,der);
+	if(limiteDer<izq) quickSort(lista,limiteDer,izq);
+}
+
+
+-------------------- o 
+
+private void quickSort(int[] lista; int a,int b){
+
+
+	this.matrix = new int[matrix.length];
+	int buff;
+	int from=a;
+	int to=b;
+	int pivot=matrix[(from+to)/2];
+
+	do{
+		while(matrix[from]<pivot) from++;
+		while(matrix[to]>pivot) to--;
+		
+		if(from<=to){
+			
+			buff = matrix[from];
+			matrix[from]=matrix[to];
+			matrix[to]=buff;
+			from++;
+			to--;
+		}	
+	}while(from<=to);
+	
+	if(a<to) quickSort(matrix,a,to);
+	if(from<b) quickSort(matrix,from,b);
+	
+	this.matrix=matrix;
+}

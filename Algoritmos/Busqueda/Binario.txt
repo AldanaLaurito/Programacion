@@ -1,0 +1,60 @@
+Binario
+
+O(log2(n)). Precondicion: Lista oredenada. 
+
+
+Sirve en lista/vector ya ordenado
+
+Divide el vector en 2 y busca en que mitad esta el elmento y asi va dividiendo cada parte en 2 hasta que encuentra lo buscado.
+
+
+Java 8:
+
+Ej.:
+
+int indice = Collections.binarySearch(lista,objetoABuscar)
+
+
+
+
+public Object busquedaBinaria(listaOrdenada){
+	
+	
+	
+}
+
+
+//TODO REVISAR
+private Object quickSort(int[] lista; int a,int b){
+
+	Object elementoBuscado;
+
+	this.matrix = new int[matrix.length];
+	int buff;
+	int from=a;
+	int to=b;
+	int pivot=matrix[(from+to)/2];
+
+	do{
+		while(matrix[from]<pivot) from++;
+		while(matrix[to]>pivot) to--;
+		
+		if(matrix[from].equals(elementoBuscado)){
+			
+			return matrix[from];
+			
+		}else if(matrix[to].equals(elementoBuscado)){
+		
+			return matrix[to];
+		}
+		
+		from++;
+		to--;
+		
+	}while(from<=to);
+	
+	if(a<to) quickSort(matrix,a,to);
+	if(from<b) quickSort(matrix,from,b);
+	
+	this.matrix=matrix;
+}

@@ -1,0 +1,29 @@
+Shellsort
+
+Mejora del algoritmo de insercion.
+
+Más eficiente si lista esta semi-ordenada.
+
+Durante la ejecución del algoritmo, los elementos de la lista se van casi-ordenando y finalmentet el ultimo paso o funcion de esta algoritmo 
+es un simple método por inserción que, al estar casi-ordenandos los elementos, es más eficiente.
+
+
+public void shellsort(int[] matrix){
+	
+	for(int increment = matrix.length/2; increment>0: increment = (increment == 2? 1 : (int) Math.round(increment/2.2))){
+		
+		for(int i=increment; i<matrix.length;i++){
+			
+			for(int j = i; j>=increment && matrix[j-increment]>matrix[j]; j-=increment){
+				
+				int temp = matrix[j];
+				matrix[j]=matrix[j-increment];
+				matrix[j-increment]=temp;				
+			}
+			
+		}
+		
+	}
+	
+	
+}

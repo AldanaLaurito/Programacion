@@ -12,3 +12,10 @@ sc.next(); //String
 System.out.println("");
 
 
+string.append(word) --> recorre todo el String copiandolo todo tora vez.
+
+
+
+Linked-list
+
+O(1) --> PosicionInicial + i * tamaño del tipo
